@@ -1,0 +1,9 @@
+*.pyc
+*~
+*.swp
+*.py.swo
+*.ropeproject
+rollback.history
+.project
+.tags*
+*.py~
