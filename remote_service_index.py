@@ -87,7 +87,7 @@ class RSPIndexGet(object):
                     for field in memory_fields:
                         f.write(field+"%\t")
                     f.write("\n")
-                f.write(t_memory+"\t"+str(mem_percs)+"\t"+str(swap_percs)+"\n")
+                f.write(t_memory+"\t"+str(mem_percs)+"\t"+str(swap_percs)+"\t\n")
         except Exception,e:
             logger.exception("获取远程memory信息失败！")
 
@@ -147,15 +147,18 @@ class RSPIndexGet(object):
         self._remote_logout()
 
 def main_thread_func():
-    for i in range(5):
+    for i in range(20):
         print "main:",i
         time.sleep(1)
+
 def drawResult():
     drawObj = DrawPic()
     drawObj.draw_figure_by_type("cpu")
     drawObj.draw_figure_by_type("memory")
-    drawObj.draw_figure_by_type("disk")
     drawObj.draw_figure_by_type("network")
+
+    dObj = DrawPic(3,1,sharex=True)
+    dObj.draw_disk_figure()
 
 if __name__ == "__main__":
     # this is for test:

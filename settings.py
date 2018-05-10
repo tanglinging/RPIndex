@@ -37,4 +37,13 @@ TITLES = {
     "disk":"Disk Read&Write Infos by Time",
     "network":"Network Bandwith by Time",
 }
+YLABELS = {
+    "cpu" :"%",
+    "memory":"%",
+    "disk":{"counts":"R&W counts",
+            "bytes":"R&W bytes",
+            "times":"R&W times",
+            },
+    "network":"KBps",
+}
 privateKeyPath = "/home/tangll/.ssh/id_rsa"
